@@ -24,9 +24,9 @@ html,body {
 }
 
 .button {
-    background-color: #dd0017;
+    background-color: white;
 	border-radius: 4px;
-    color: black;
+    color: white;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -39,12 +39,15 @@ html,body {
 }
 
 .button1 {
-    background-color: #dd0017;
+    background-color: #d3d3d3;
+	color: black;
 	margin: 23px 10px;
-    border: 2px solid #dd0017;
+    border: 2px solid black;
 }
 
 .button1:hover {
-    background-color: #d3d3d3;
+    background-color: black;
+	color: #d3d3d3;
+	border: 2px solid #d3d3d3;
 }
 
