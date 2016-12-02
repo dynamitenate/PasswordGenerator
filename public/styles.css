@@ -1,0 +1,50 @@
+html,body {
+	padding:0;
+	margin:0;
+}
+
+#logo {
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	width: 250px;
+	float: left;
+}
+
+#logoAfter {
+	background-color: black;
+	text-align: right;
+	padding-right: 10px;
+	height: 104px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#body {
+	background-color: white;
+}
+
+.button {
+    background-color: #dd0017;
+	border-radius: 4px;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 23px 13px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #dd0017;
+	margin: 23px 10px;
+    border: 2px solid #dd0017;
+}
+
+.button1:hover {
+    background-color: #d3d3d3;
+}
+
