@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 app.post('/test', function(req, res) {
 	console.log(req.body.username);
 	console.log(req.body.password);
-	res.send(req.body.username + ": " + req.body.password);
+	res.send("Success!");
 });
 
 // start server on the specified port and binding host
