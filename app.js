@@ -43,7 +43,7 @@ app.post('/authenticate', function(req, res) {
 	console.log(req.body.username);
 	console.log(req.body.password);
 	
-	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+	firebase.auth().signInWithEmailAndPassword(req.body.username, req.body.password).catch(function(error) {
   		// Handle Errors here.
   		var errorCode = error.code;
 		var errorMessage = error.message;
