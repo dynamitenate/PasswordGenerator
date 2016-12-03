@@ -40,7 +40,17 @@ app.post('/test', function(req, res) {
 
 //Firebase Authentication on the server
 app.post('/authenticate', function(req, res) {
+	console.log(req.body.username);
+	console.log(req.body.password);
 	
+	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  		// Handle Errors here.
+  		var errorCode = error.code;
+		var errorMessage = error.message;
+		console.log(errorCode + ": " + errorMessage);
+		res.send("error");
+	});
+	res.send("Success!");
 });
 
 // start server on the specified port and binding host
