@@ -23,8 +23,16 @@ var appEnv = cfenv.getAppEnv();
 
 var bodyParser = require('body-parser');
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 app.post('/test', function(req, res) {
-	
+	console.log(req.body.username);
+	console.log(req.body.password);
+	res.send(req.body.username + ": " + req.body.password);
 });
 
 // start server on the specified port and binding host
