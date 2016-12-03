@@ -20,7 +20,6 @@ function signupButton() {
 	xhr.open("POST", "http://espnbetting.mybluemix.net/signup");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
-	window.alert("Request Sent");
 }
 
 function loginButton() {
@@ -42,5 +41,4 @@ function loginButton() {
 	xhr.open("POST", "http://espnbetting.mybluemix.net/authenticate");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
-	window.alert("Request Sent");
 }
