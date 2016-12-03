@@ -1,15 +1,7 @@
 /*eslint-env node*/
 
-//------------------------------------------------------------------------------
-// node.js starter application for Bluemix
-//------------------------------------------------------------------------------
-
-// This application uses express as its web server
-// for more info, see: http://expressjs.com
 var express = require('express');
 
-// cfenv provides access to your Cloud Foundry environment
-// for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
 // create a new express server
@@ -23,6 +15,17 @@ var appEnv = cfenv.getAppEnv();
 
 var bodyParser = require('body-parser');
 
+var firebase = require('firebase');
+
+var config = {
+    apiKey: "AIzaSyDcbEovG_dBPQjDpuhrAtmU7Pv-HsG6Rww",
+    authDomain: "passwordgenerator-c85fb.firebaseapp.com",
+    databaseURL: "https://passwordgenerator-c85fb.firebaseio.com",
+    storageBucket: "passwordgenerator-c85fb.appspot.com",
+    messagingSenderId: "431247417376"
+  };
+firebase.initializeApp(config);
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -33,6 +36,11 @@ app.post('/test', function(req, res) {
 	console.log(req.body.username);
 	console.log(req.body.password);
 	res.send("Success!");
+});
+
+//Firebase Authentication on the server
+app.post('/authenticate', function(req, res) {
+	
 });
 
 // start server on the specified port and binding host
