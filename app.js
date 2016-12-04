@@ -43,15 +43,29 @@ app.post('/authenticate', function(req, res) {
 	console.log(req.body.username);
 	console.log(req.body.password);
 	
-	firebase.auth().signInWithEmailAndPassword(req.body.username, req.body.password).catch(function(error) {
+	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
   		// Handle Errors here.
   		var errorCode = error.code;
 		var errorMessage = error.message;
 		console.log(errorCode + ": " + errorMessage);
-		res.send("error");
+		authenticated = false;
+		//res.send("Error!");
 	});
-	res.send("Success!");
+	
+	
+	
+	//var authe = auth(req.body.username, req.body.password);
+	
+	console.log(authe);
 });
+
+function auth(email, password) {
+	var authenticated = true;
+	
+	
+	
+	return authenticated;
+}
 
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
