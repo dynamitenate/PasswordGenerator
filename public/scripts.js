@@ -3,7 +3,7 @@ function signupButton() {
 	var pass1 = document.getElementById('pwdSU').value;
 	var pass2 = document.getElementById('cpwd').value;
 	if (pass1.localeCompare(pass2) != 0) {
-		window.alert("Passwords do not match");
+		toastr.error('Your passwords do not match');
 		return;
 	}
 	var data = JSON.stringify({"username": email, "password": pass1});
@@ -11,13 +11,17 @@ function signupButton() {
 	xhr.addEventListener("readystatechange", function () {
   		if (this.readyState === 4) {
 			console.log(this.responseText);
-			if (this.responseText === "success")
+			if (this.responseText === "User Created!")
 				toastr.success('Successfully signed up! Click on the Log In button to continue');
-			else
-				toastr.error('Couldn\'t Sign Up. Error!')
+			else if (this.responseText === "Email already in use!")
+				toastr.error('The email you supplied is already in use');
+			else if (this.responseText === "Invalid email!")
+				toastr.error('The email you supplied is invalid');
+			else if (this.responseText === "Weak Password, Please try again with a different password.")
+				toastr.error('Your password is too weak');
   		}
 	});
-	xhr.open("POST", "http://espnbetting.mybluemix.net/signup");
+	xhr.open("POST", "http://espnbetting.mybluemix.net/signUp");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
@@ -30,8 +34,10 @@ function loginButton() {
 	xhr.addEventListener("readystatechange", function () {
   		if (this.readyState === 4) {
     		console.log(this.responseText);
-			if (this.responseText === "") {
-				toastr.error('Couldn\'t Sign in. Incorrect Email or Password');
+			if (this.responseText === "User not found!") {
+				toastr.error('Couldn\'t Sign in. Incorrect Email');
+			} else if (this.responseText === "Wrong Password!") {
+				toastr.error('Couldn\'t Sign in. Incorrect Password');
 			} else {
 				toastr.success('Signed In!');
 				localStorage.setItem('username', this.responseText);
