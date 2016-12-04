@@ -11,17 +11,17 @@ function signupButton() {
 	xhr.addEventListener("readystatechange", function () {
   		if (this.readyState === 4) {
 			console.log(this.responseText);
-			if (this.responseText === "User Created!")
+			if (this.responseText == "User Created!")
 				toastr.success('Successfully signed up! Click on the Log In button to continue');
-			else if (this.responseText === "Email already in use!")
+			else if (this.responseText == "Email already in use!")
 				toastr.error('The email you supplied is already in use');
-			else if (this.responseText === "Invalid email!")
+			else if (this.responseText == "Invalid email!")
 				toastr.error('The email you supplied is invalid');
-			else if (this.responseText === "Weak Password, Please try again with a different password.")
+			else if (this.responseText == "Weak Password, Please try again with a different password.")
 				toastr.error('Your password is too weak');
   		}
 	});
-	xhr.open("POST", "http://espnbetting.mybluemix.net/signUp");
+	xhr.open("POST", "http://localhost:6005/signUp");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
@@ -34,9 +34,9 @@ function loginButton() {
 	xhr.addEventListener("readystatechange", function () {
   		if (this.readyState === 4) {
     		console.log(this.responseText);
-			if (this.responseText === "User not found!") {
+			if (this.responseText == "User not found!") {
 				toastr.error('Couldn\'t Sign in. Incorrect Email');
-			} else if (this.responseText === "Wrong Password!") {
+			} else if (this.responseText == "Wrong Password!") {
 				toastr.error('Couldn\'t Sign in. Incorrect Password');
 			} else {
 				toastr.success('Signed In!');
@@ -44,7 +44,7 @@ function loginButton() {
 			}
   		}
 	});
-	xhr.open("POST", "http://espnbetting.mybluemix.net/authenticate");
+	xhr.open("POST", "http://localhost:6005/authenticate");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
