@@ -39,10 +39,14 @@ app.post('/test', function(req, res) {
 });
 
 //Firebase Authentication on the server
+//var authenticated = true;
 app.post('/authenticate', function(req, res) {
 	console.log(req.body.username);
 	console.log(req.body.password);
 	
+	var email = req.body.username;
+	var password = req.body.password;
+	var authenticated = true;
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
   		// Handle Errors here.
   		var errorCode = error.code;
@@ -52,20 +56,13 @@ app.post('/authenticate', function(req, res) {
 		//res.send("Error!");
 	});
 	
-	
-	
-	//var authe = auth(req.body.username, req.body.password);
-	
-	console.log(authe);
+	setTimeout(function() {
+		if (authenticated == false)
+			res.send("Error!");
+		else if (authenticated == true)
+			res.send("Success!");
+	}, 2000);
 });
-
-function auth(email, password) {
-	var authenticated = true;
-	
-	
-	
-	return authenticated;
-}
 
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
