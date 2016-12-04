@@ -71,6 +71,39 @@ app.post('/authenticate', function(req, res) {
 	}, 2000);
 });
 
+app.post('/signUp', function(req, res) {
+	console.log(req.body.username);
+	console.log(req.body.password);
+
+	email = req.body.username;
+	password = req.body.password;
+	
+	var errorCode;
+	var errorBool = false;
+	firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  		// Handle Errors here.
+		errorBool = true;
+  		errorCode = error.code;
+		console.log(errorCode);
+  		var errorMessage = error.message;
+		console.log(errorMessage);
+	});
+	
+	setTimeout(function() {
+		if (errorBool == false) {
+			res.send("User created!");
+		} else {
+			if (errorCode == "auth/email-already-in-use") {
+				res.send("Email already in use!");
+			} else if (errorCode == "auth/invalid-email") {
+				res.send("Invalid email!");
+			} else if (errorCode == "auth/weak-password") {
+				res.send("Weak Password, Please try again with a different password.");
+			}
+		}
+	}, 3000);
+});
+
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
