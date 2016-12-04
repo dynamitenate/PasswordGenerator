@@ -101,7 +101,7 @@ app.post('/signUp', function(req, res) {
 				res.send("Weak Password, Please try again with a different password.");
 			}
 		}
-	}, 3000);
+	}, 2000);
 });
 
 // start server on the specified port and binding host
