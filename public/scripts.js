@@ -21,7 +21,7 @@ function signupButton() {
 				toastr.error('Your password is too weak');
   		}
 	});
-	xhr.open("POST", "http://localhost:6005/signUp");
+	xhr.open("POST", "http://espnbetting.mybluemix.net/signUp");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
@@ -44,7 +44,7 @@ function loginButton() {
 			}
   		}
 	});
-	xhr.open("POST", "http://localhost:6005/authenticate");
+	xhr.open("POST", "http://espnbetting.mybluemix.net/authenticate");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
