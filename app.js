@@ -47,9 +47,10 @@ app.post('/authenticate', function(req, res) {
 	var email = req.body.username;
 	var password = req.body.password;
 	var authenticated = true;
+	var errorCode;
 	firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
   		// Handle Errors here.
-  		var errorCode = error.code;
+  		errorCode = error.code;
 		var errorMessage = error.message;
 		console.log(errorCode + ": " + errorMessage);
 		authenticated = false;
@@ -57,10 +58,16 @@ app.post('/authenticate', function(req, res) {
 	});
 	
 	setTimeout(function() {
-		if (authenticated == false)
-			res.send("Error!");
-		else if (authenticated == true)
-			res.send("Success!");
+		if (authenticated == false) {
+			if (errorCode == "auth/wrong-password") {
+				res.send("Wrong Password!");
+			} else if (errorCode == "auth/user-not-found") {
+				res.send("User not found!");
+			}
+		}
+		else if (authenticated == true) {
+			res.send(email);
+		}
 	}, 2000);
 });
 
