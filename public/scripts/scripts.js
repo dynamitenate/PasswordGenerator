@@ -131,7 +131,7 @@ function addPassword(){
 	var pass = document.getElementById('password').value;
 	var user = document.getElementById('username').value;
 	var service = document.getElementById('service').value;
-	if(pass===null || user ===null || service ===null){
+	if (pass === null || user === null || service === null){
 		toastr.error('All fields must be filled in');
 		return;
 	}
