@@ -62,3 +62,7 @@ a:hover, a:active {
 	color: lightgray;
 	text-decoration: none;
 }
+
+input {
+	font-size: 22px;
+}
