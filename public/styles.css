@@ -1,8 +1,8 @@
 html,body {
 	padding:0;
 	margin:0;
-	/*background-image: url("background.jpg");*/
-	background-color: dodgerblue;
+	background-image: url("background.jpg");
+	/*background-color: dodgerblue;*/
     background-repeat: repeat;
 }
 
