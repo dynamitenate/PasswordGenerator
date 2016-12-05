@@ -120,6 +120,8 @@ app.post('/signUp', function(req, res) {
 	}, 1000);
 });
 
+
+// Heart of the website, the not so "random" password generator
 app.post('/generateRandom', function(req, res) {
 	console.log(req.body.main);
 	console.log(req.body.dates);
