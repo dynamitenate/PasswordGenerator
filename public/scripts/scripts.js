@@ -102,3 +102,17 @@ function setPassword(difficulty) {
 		selection = 2;
 	}
 }
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+var capitalLetters = 0;
+var specialCharacters = 0;
+
+function modifyPassword(cap) {
+	if (cap == 'c')
+		capitalLetters = 1;
+	else if (cap == 's')
+		specialCharacters = 1;
+}

@@ -21,7 +21,7 @@ var mongoUrl = "mongodb://justin:password@aws-us-east-1-portal.11.dblayer.com:15
 var mongoose = require('mongoose');
 mongoose.connect(mongoUrl);
 var db = mongoose.connection;
-db.on('error', console.bind(console, 'connection error'));
+db.on('error', console.error.bind(console, 'connection error'));
 db.once('open',function(){
 	var schema = mongoose.Schema({
 		username: String,
