@@ -20,11 +20,13 @@
     });
 </script>
 <script>
+	sessionStorge.setItem("numKeys", "5");
+<!--<script>
 	var login = sessionStorage.getItem("username");
 	if (login == null) {
 		document.location.href = "../index.html";
 	}
-</script>
+</script>-->
 <script src="../scripts/scripts.js"></script>
 </head>
 <body>
@@ -34,17 +36,14 @@
 <div id="body" style="margin-bottom:45px;">
 	<div class="container">
 		<div class="form-group">
-				<h1>Tell us a little bit about yourself...</h1>
-				<textarea class="form-control" rows="5" id="text"></textarea>
+				<h1>Tell us a little bit about yourself...<br><small>Input some keywords with certain significance to yourself (e.g. your first dog's name)</small></h1>
+				
 				<h2>Custom generation options</h2>
 				<div class="checkbox">
 					<label><input type="checkbox" id="capitalCB" value="">Capital Letters</label>
 				</div>
 				<div class="checkbox">
 					<label><input type="checkbox" id="specialCB" value="">Special Characters</label>
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" id="encryptCB" value="">Encrypt Password</label>
 				</div>
 		</div>
 	</div>
