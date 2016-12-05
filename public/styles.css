@@ -62,7 +62,10 @@ a:hover, a:active {
 	color: lightgray;
 	text-decoration: none;
 }
-
+th{
+	padding-left:150px;
+	padding-right:150px;
+}
 input {
 	font-size: 22px;
 }
