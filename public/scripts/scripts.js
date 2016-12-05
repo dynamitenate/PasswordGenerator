@@ -16,6 +16,7 @@ function signupButton() {
 	xhr.addEventListener("readystatechange", function () {
   		if (this.readyState === 4) {
 			console.log(this.responseText);
+			toastr.clear();
 			if (this.responseText == "User Created!") {
 				toastr.success('Successfully signed up! Click on the Log In button to continue');
 				window.alert('Successfully signed up! Click on the Log In button to continue');
@@ -47,6 +48,7 @@ function loginButton() {
   		if (this.readyState === 4) {
     		console.log(this.responseText);
 			var response = this.responseText;
+			toastr.clear();
 			if (this.responseText == "User not found!") {
 				toastr.error('Couldn\'t Sign in. Incorrect Email');
 				window.alert('Couldn\'t Sign in. Incorrect Email');
@@ -57,7 +59,7 @@ function loginButton() {
 				toastr.success(this.responseText);
 				localStorage.setItem('username', this.responseText);
 			} else {
-				toastr.error("Screw you, biatch.");
+				toastr.warning("Woah, slow down there cowboy.");
 			}
 			document.getElementById('loginB').disabled = false;
   		}
