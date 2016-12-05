@@ -24,10 +24,6 @@
 	if (login == null) {
 		document.location.href = "../index.html";
 	}
-	if (sessionStorage.getItem('pwd') != null && sessionStorage.getItem != '') {
-		document.getElementById('password').innerHTML = sessionStorage.getItem('pwd');
-		sessionStorage.removeItem('pwd');
-	}
 </script>
 <script>
 	var data = JSON.stringify({"user":login});
