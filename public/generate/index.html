@@ -20,10 +20,11 @@
     });
 </script>
 <script>
-	var login = localStorage.getItem("username");
-	if (login === null) {
-		document.location.href = "https://espnbetting.mybluemix.net/";
+	var login = sessionStorage.getItem("username");
+	if (login == null) {
+		document.location.href = "../index.html";
 	}
+</script>
 <script src="../scripts/scripts.js"></script>
 </head>
 <body>
@@ -37,10 +38,13 @@
 				<textarea class="form-control" rows="5" id="text"></textarea>
 				<h2>Custom generation options</h2>
 				<div class="checkbox">
-					<label><input type="checkbox" value="">Capital Letters</label>
+					<label><input type="checkbox" id="capitalCB" value="">Capital Letters</label>
 				</div>
 				<div class="checkbox">
-					<label><input type="checkbox" value="">Special Characters</label>
+					<label><input type="checkbox" id="specialCB" value="">Special Characters</label>
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" id="encryptCB" value="">Encrypt Password</label>
 				</div>
 		</div>
 	</div>
