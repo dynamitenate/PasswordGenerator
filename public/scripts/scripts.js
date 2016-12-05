@@ -58,8 +58,8 @@ function loginButton() {
 				toastr.error('Couldn\'t Sign in. Incorrect Password');
 			} else if (response.includes("Success!")) {
 				toastr.success(this.responseText);
-				this.responseText = this.responseText.substring(this.responseText.indexOf(' ') + 1, this.responseText.indexOf('@'));
-				sessionStorage.setItem('username', this.responseText);
+				var something = this.responseText.substring(this.responseText.indexOf(' ') + 1, this.responseText.indexOf('@'));
+				sessionStorage.setItem('username', something);
 				document.location.href = "generate/";
 			} else {
 				toastr.warning("Woah, slow down there cowboy.");
