@@ -26,12 +26,11 @@ mongoose.connect(mongoUrl);
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error'));
-db.once('open',function(){
-	var schema = mongoose.Schema({
-		username: String,
-		passwords: [String]
-	})
+var schema = mongoose.Schema({
+	user: String,
+	passwords: [String]
 });
+var model = mongoose.model('model',schema);
 
 // Try to initialize the hashset and put the stopwords inside it.
 var HashSet = require('native-hashset');
