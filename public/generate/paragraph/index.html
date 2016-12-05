@@ -34,6 +34,7 @@
 <div id="body" style="margin-bottom:45px;">
 	<div class="container">
 		<div class="form-group">
+			<form>
 				<h1>Tell us a little bit about yourself...</h1>
 				<textarea class="form-control" rows="5" id="text"></textarea>
 				<h2>Custom generation options</h2>
@@ -43,9 +44,8 @@
 				<div class="checkbox">
 					<label><input type="checkbox" id="specialCB" value="">Special Characters</label>
 				</div>
-				<div class="checkbox">
-					<label><input type="checkbox" id="encryptCB" value="">Encrypt Password</label>
-				</div>
+				<button type="button" id="generate" class="btn btn-default" >Generate</button>
+			</form>
 		</div>
 	</div>
 </div>
