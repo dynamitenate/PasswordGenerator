@@ -63,8 +63,7 @@ a:hover, a:active {
 	text-decoration: none;
 }
 th{
-	padding-left:150px;
-	padding-right:150px;
+	width = 400px;
 }
 input {
 	font-size: 22px;
