@@ -109,7 +109,7 @@ function setPassword(difficulty) {
 
 function savePwd() {
 	var pw = document.getElementById('password').value;
-	db.once('open', function(){
+	/*db.once('open', function(){
 		model.find({user:sessionStorage.getItem("username")},callback);
 		if(callback==null){
 			var newuser = new model({user:sessionStorage.getItem("username"), passwords[0]:pw});
@@ -119,7 +119,7 @@ function savePwd() {
 		}else{
 			
 		}
-	});
+	});*/
 }
 
 var capitalLetters = false;
