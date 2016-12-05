@@ -127,6 +127,24 @@ function savePwd() {
 var capitalLetters = false;
 var specialCharacters = false;
 
+function addPassword(){
+	var pass = document.getElementById('password').value;
+	var user = document.getElementById('username').value;
+	var service = document.getElementById('service').value;
+	if(pass===null || user ===null || service ===null){
+		toastr.error('All fields must be filled in');
+		return;
+	}
+	var table = document.getElementById("table");
+	var row = table.insertRow(0);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	cell1.innerHTML = service;
+	cell2.innerHTML = user;
+	cell3.innerHTML = pass;
+}
+
 function modifyPassword(cap) {
 	if (cap == 'c') {
 		if (capitalLetters)
