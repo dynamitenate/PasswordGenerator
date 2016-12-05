@@ -107,8 +107,6 @@ function setPassword(difficulty) {
 		selection = 2;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 function savePwd() {
 	var pw = document.getElementById('password').value;
 	db.once('open', function(){
@@ -122,13 +120,7 @@ function savePwd() {
 			
 		}
 	});
-=======
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
 }
-
-=======
->>>>>>> origin/master
 var capitalLetters = false;
 var specialCharacters = false;
 
@@ -137,5 +129,4 @@ function modifyPassword(cap) {
 		capitalLetters = true;
 	else if (cap == 's')
 		specialCharacters = true;
->>>>>>> origin/master
 }
