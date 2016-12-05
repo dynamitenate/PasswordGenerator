@@ -10,7 +10,7 @@ function signupButton() {
 	var pass2 = document.getElementById('cpwd').value;
 	if (pass1.localeCompare(pass2) != 0) {
 		toastr.error('Your passwords do not match');
-		window.alert('Your passwords do not match');
+		//window.alert('Your passwords do not match');
 		document.getElementById('signupB').disabled = false;
 		return;
 	}
