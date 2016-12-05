@@ -35,7 +35,7 @@ function signupButton() {
 			document.getElementById('signupB').disabled = false;
   		}
 	});
-	xhr.open("POST", "http://espnbetting.mybluemix.net/signUp");
+	xhr.open("POST", "https://espnbetting.mybluemix.net/signUp");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
@@ -65,7 +65,7 @@ function loginButton() {
 			document.getElementById('loginB').disabled = false;
   		}
 	});
-	xhr.open("POST", "http://espnbetting.mybluemix.net/authenticate");
+	xhr.open("POST", "https://espnbetting.mybluemix.net/authenticate");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
