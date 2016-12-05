@@ -77,9 +77,9 @@ var selection = 1;
 function generateWord() {
 	console.log("It enters here!");
 	var keywords = document.getElementById('keywords').value;
-	keywords=keywords.replace(" ", "");
+	keywords=keywords.replace(/\s+/, "");
 	var dates = document.getElementById('dates').value;
-	dates=dates.replace(" ","");
+	dates=dates.replace(/\s+/, "");
 	var paragraph = document.getElementById('paragraph').value;
 	var data = JSON.stringify({"main": keywords, "dates": dates, "extra": paragraph});
 	var xhr = new XMLHttpRequest();
