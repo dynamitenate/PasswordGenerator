@@ -71,6 +71,8 @@ function loginButton() {
 	xhr.send(data);
 }
 
+var selection = 1;
+
 function generateWord() {
 	console.log("It enters here!");
 	var keywords = document.getElementById('keywords').value;
@@ -82,10 +84,21 @@ function generateWord() {
 	xhr.addEventListener("readystatechange", function() {
 		if (this.readyState === 4) {
 			console.log("Got a response!");
-			document.getElementById('password').value = this.responseText;
+			var response = this.responseText.split(" : ");
+			document.getElementById('password').value = response[selection];
 		}
 	});
 	xhr.open("POST", "https://espnbetting.mybluemix.net/generateRandom");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
+}
+
+function setPassword(difficulty) {
+	if (difficulty == 'easy') {
+		selection = 0;
+	} else if (difficulty == 'medium') {
+		selection = 1;
+	} else if (difficulty == 'hard') {
+		selection = 2;
+	}
 }
