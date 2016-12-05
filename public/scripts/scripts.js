@@ -126,8 +126,15 @@ var capitalLetters = false;
 var specialCharacters = false;
 
 function modifyPassword(cap) {
-	if (cap == 'c')
-		capitalLetters = true;
-	else if (cap == 's')
-		specialCharacters = true;
+	if (cap == 'c') {
+		if (capitalLetters)
+			capitalLetters = false;
+		else
+			capitalLetters = true;
+	} else if (cap == 's') {
+		if (specialCharacters)
+			specialCharacters = false;
+		else
+			specialCharacters = true;
+	}
 }
