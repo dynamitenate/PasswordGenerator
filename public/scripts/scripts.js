@@ -2,6 +2,7 @@
 /*globals toastr data*/
 
 function signupButton() {
+	document.getElementById('signupB').disabled = true;
 	var email = document.getElementById('emailSU').value;
 	var pass1 = document.getElementById('pwdSU').value;
 	var pass2 = document.getElementById('cpwd').value;
@@ -28,6 +29,7 @@ function signupButton() {
 				toastr.error('Your password is too weak');
 				window.alert('Your password is too weak');
 			}
+			document.getElementById('signupB').disabled = false;
   		}
 	});
 	xhr.open("POST", "http://espnbetting.mybluemix.net/signUp");
@@ -36,6 +38,7 @@ function signupButton() {
 }
 
 function loginButton() {
+	document.getElementById('loginB').disabled = true;
 	var email = document.getElementById('email').value;
 	var passw = document.getElementById('pwd').value;
 	var data = JSON.stringify({"username": email, "password": passw});
@@ -53,6 +56,7 @@ function loginButton() {
 				toastr.success(this.responseText);
 				localStorage.setItem('username', this.responseText);
 			}
+			document.getElementById('loginB').disabled = false;
   		}
 	});
 	xhr.open("POST", "http://espnbetting.mybluemix.net/authenticate");
