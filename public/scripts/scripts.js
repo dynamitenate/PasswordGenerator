@@ -50,7 +50,7 @@ function loginButton() {
 				toastr.error('Couldn\'t Sign in. Incorrect Password');
 				window.alert('Couldn\'t Sign in. Incorrect Password');
 			} else {
-				toastr.success('Signed In!');
+				toastr.success(this.responseText);
 				localStorage.setItem('username', this.responseText);
 			}
   		}
