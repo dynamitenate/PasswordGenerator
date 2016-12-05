@@ -23,7 +23,8 @@ var stopWords = ["a","a's","able","about","above","according","accordingly","acr
 var set = new HashSet.String();
 
 // Putting all the stopwords in a HashSet
-for (int i = 0; i < stopWords.length; i++) {
+var i = 0;
+for (i = 0; i < stopWords.length; i++) {
 	set.add(stopWords[i]);
 }
 
@@ -45,6 +46,11 @@ app.use(bodyParser.json());
 app.post('/test', function(req, res) {
 	console.log(req.body.username);
 	console.log(req.body.password);
+	var it = set.iterator();
+ 
+	while (it.hasNext()) {
+  		console.log(it.next());
+	}
 	res.send("Success!");
 });
 
