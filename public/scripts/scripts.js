@@ -3,6 +3,17 @@
 
 toastr.options.closeButton = true;
 
+function login() {
+	document.getElementById('pwd').onkeypress = function(e) {
+		if (!e) e = window.Event;
+		var keyCode = e.keyCode || e.which;
+		if (keyCode == '13') {
+			loginButton();
+			return false;
+		}
+	}
+}
+
 function signupButton() {
 	document.getElementById('signupB').disabled = true;
 	var email = document.getElementById('emailSU').value;
