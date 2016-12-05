@@ -17,11 +17,17 @@ var bodyParser = require('body-parser');
 
 var firebase = require('firebase');
 
+var mongoUrl = "mongodb://justin:password@aws-us-east-1-portal.11.dblayer.com:15378/pwd?ssl=true";
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://justin:password@aws-us-east-1-portal.11.dblayer.com:15378/pwd?ssl=true');
+mongoose.connect(mongoUrl);
 var db = mongoose.connection;
 db.on('error', console.bind(console, 'connection error'));
-db.once('open');
+db.once('open',function(){
+	var schema = mongoose.Schema({
+		username: String,
+		passwords: [String]
+	})
+});
 
 // Try to initialize the hashset and put the stopwords inside it.
 var HashSet = require('native-hashset');
