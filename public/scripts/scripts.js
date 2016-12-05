@@ -19,14 +19,18 @@ function signupButton() {
   		if (this.readyState === 4) {
 			console.log(this.responseText);
 			toastr.clear();
-			if (this.responseText == "User Created!") {
+			if (this.responseText == "User created!") {
 				toastr.success('Successfully signed up! Click on the Log In button to continue');
+				//window.alert('Successfully signed up! Click on the Log In button to continue');
 			} else if (this.responseText == "Email already in use!") {
 				toastr.error('The email you supplied is already in use');
+				//window.alert('The email you supplied is already in use');
 			} else if (this.responseText == "Invalid email!") {
 				toastr.error('The email you supplied is invalid');
+				//window.alert('The email you supplied is invalid');
 			} else if (this.responseText == "Weak Password, Please try again with a different password.") {
 				toastr.error('Your password is too weak');
+				//window.alert('Your password is too weak');
 			}
 			document.getElementById('signupB').disabled = false;
   		}

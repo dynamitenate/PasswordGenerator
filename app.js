@@ -90,6 +90,7 @@ app.post('/signUp', function(req, res) {
 	
 	setTimeout(function() {
 		if (errorBool == false) {
+			console.log("It comes here!");
 			res.send("User created!");
 		} else {
 			if (errorCode == "auth/email-already-in-use") {
@@ -100,7 +101,7 @@ app.post('/signUp', function(req, res) {
 				res.send("Weak Password, Please try again with a different password.");
 			}
 		}
-	}, 2000);
+	}, 1000);
 });
 
 app.post('/generate', function(req, res) {
