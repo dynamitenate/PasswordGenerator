@@ -121,6 +121,7 @@ function savePwd() {
 		}
 	});
 }
+
 var capitalLetters = false;
 var specialCharacters = false;
 
