@@ -145,6 +145,7 @@ function addPassword(){
 	cell3.innerHTML = pass;
 	var currentUser = sessionStorage.getItem("username");
 	var data = JSON.stringify({"user": currentUser, "website": service, "username": user, "password": pass});
+	console.log(data);
 	var xhr = new XMLHttpRequest();
 	xhr.addEventListener("readystatechange", function() {
 		if (this.readyState === 4) {
