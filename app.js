@@ -191,6 +191,47 @@ app.post('/generateRandom', function(req, res) {
 		res.send(gen);
 });
 
+var database = firebase.database();
+
+app.post('/addEntry', function(req, res) {
+	console.log(req.body.user);
+	console.log(req.body.website);
+	console.log(req.body.username);
+	console.log(req.body.password);
+	
+	var user = req.body.user;
+	var website = req.body.website;
+	var username = req.body.username;
+	var password = req.body.password;
+	
+	var ref = firebase.database().ref('/' + user + '/' + website);
+	ref.once("value")
+		.then(function(snapshot) {
+		var check = snapshot.exists();
+		if (check === true) {
+			res.send("Cannot add, already exists!");
+		} else {
+			firebase.database().ref('/' + user + '/' + website).set({
+				username: username,
+				password: password
+			});
+			res.send("Hopefully done!");
+		}
+	});
+});
+
+app.post('/getEntries', function(req, res) {
+	console.log(req.body.user);
+	var user = req.body.user;
+	
+	var ref = firebase.database().ref('/' + user);
+	
+	ref.once("value", function(data) {
+		console.log(data.val());
+		res.send(data.val());
+	});
+});
+
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
