@@ -24,7 +24,7 @@
 </script>
 <script>
 	var login = sessionStorage.getItem("username");
-	if (login == null) {
+	if (login == null || login == " ") {
 		document.location.href = "../index.html";
 	}
 </script>
@@ -45,7 +45,7 @@
 		</script>
 		<script>
 		function logout() {
-			sessionStorage.setItem("username", null);
+			sessionStorage.setItem("username", " ");
 			document.location.href = "../index.html";
 		}
 		</script>
