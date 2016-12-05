@@ -58,12 +58,7 @@ a:visited {
 	text-decoration: none;
 }
 
-a:hover {
-	color: lightgray;
-	text-decoration: none;
-}
-
-a:active {
+a:hover, a:active {
 	color: lightgray;
 	text-decoration: none;
 }
