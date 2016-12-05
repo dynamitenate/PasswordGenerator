@@ -36,8 +36,9 @@
 			var username = sessionStorage.getItem("username");
 			var name = username.substring(0, username.indexOf('@'));
 			name = name.substring(name.indexOf(' ') + 1);
-			var hello = "Hello, ";
+			var hello = "Hello, <a href=\"#\">";
 			name = hello.concat(name);
+			name = name.concat("</a>");
 			document.getElementById('profile').innerHTML = name;
 		</script>
 		<script>
