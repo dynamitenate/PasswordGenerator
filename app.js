@@ -169,6 +169,12 @@ app.post('/general', function(req, res) {
 	// (Optional) Choose one from the extra array
 	var randomRandom = Math.floor(Math.random() * eW.length);
 	
+	if ((mW[randomNumber] == mW[randomNumber2]) && mW.length >= 2) {
+		while (mW[randomNumber] == mW[randomNumber2]) {
+			randomNumber2 = Math.floor(Math.random() * mW.length);
+		}
+	}
+	
 	var gen = mW[randomNumber] + mW[randomNumber2] + dW[randomDate];
 	
 	var gen2 = null;
