@@ -34,9 +34,27 @@
 <div id="body" style="margin-bottom:45px;">
 	<div class="container">
 		<h1 style = "text-align:center">Saved Passwords</h1>
-		<table border = "1">
-			
+		<table border = "1" id="table">
+			<tr>
+				<th>Website</th>
+				<th>Username</th>
+				<th>Password</th>
+			</tr>
 		<table>
+		<div class="row">
+			<div class="col-sm-4">
+				<label for="service">Service:</label>
+				<input type="text" class = "form-control" id = "service">
+			</div>
+			<div class="col-sm-4">
+				<label for="username">Username:</label>
+				<input type="text" class = "form-control" id = "username">
+			</div>
+			<div class="col-sm-4">
+				<label for="password">Password:</label>
+				<input type="text" class = "form-control" id = "password">
+			</div>
+		</div>
 	</div>
 </div>
 </body>
