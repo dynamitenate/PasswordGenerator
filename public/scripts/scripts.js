@@ -71,3 +71,7 @@ function loginButton() {
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
+
+function generate() {
+	
+}
