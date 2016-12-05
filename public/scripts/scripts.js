@@ -148,7 +148,7 @@ function addPassword(){
 	var xhr = new XMLHttpRequest();
 	xhr.addEventListener("readystatechange", function() {
 		if (this.readyState === 4) {
-			console.log("Got a response!");
+			console.log(this.responseText);
 		}
 	});
 	xhr.open("POST", "https://espnbetting.mybluemix.net/addEntry");
