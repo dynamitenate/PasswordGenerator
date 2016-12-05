@@ -164,8 +164,16 @@ app.post('/generateRandom', function(req, res) {
 	if (eW.length > 0)
 		gen2 = mW[randomNumber] + mW[randomNumber2] + dW[randomDate] + eW[randomRandom];
 	
-	if (gen2 != null)
-		res.send(gen + " : " + gen2);
+	var gen3 = null;
+	if (dW.length > 1 && eW.length > 1)
+		gen3 = mW[randomNumber] + dW[randomNumber2] + mW[randomNumber2] + dW[randomDate] + eW[randomRandom];
+	
+	if (gen2 != null && gen3 != null)
+		res.send(gen + " : " + gen2 + " : " + gen3);
+	else if (gen2 != null)
+		res.send(gen + " : " + gen3);
+	else if (gen3 != null)
+		res.send(gen + " : " + gen3);
 	else
 		res.send(gen);
 });
