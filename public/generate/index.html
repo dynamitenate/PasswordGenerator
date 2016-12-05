@@ -31,12 +31,12 @@
 </div>
 <div id="body" style="margin-bottom:45px;">
 	<div class="container">
-		<button type="button" id="profile" class="btn btn-default"></button>
+		<div id="profile"></div>
 		<script>
 			var username = sessionStorage.getItem("username");
 			var name = username.substring(0, username.indexOf('@'));
 			name = name.substring(name.indexOf(' ') + 1);
-			document.getElementById('profile').innerHTML = name;
+			document.getElementById('profile').innerHTML = 'Hello, <a href="#">' + name + "</a>";
 		</script>
 		<script>
 		function logout() {
@@ -44,7 +44,9 @@
 			document.location.href = "../index.html";
 		}
 		</script>
-		<button type="button" id="logout" class="btn btn-danger" onclick="logout()">logout</button>
+		<div style="font-align: right">
+		<button type="button" id="logout" class="btn btn-danger" onclick="logout()">Logout</button>
+		</div>
 		<div class="form-group" style="background-color:#d3d3d3;margin-top:20px;padding:5px 15px 15px 15px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);border-radius:10px;">
 			<form>
 				<h1>Tell us a little bit about yourself...<br><small>Step 1: Enter some keywords you would want and remember in your password (Format: keyWord1,keyWord2,keyWord3...)</small></h1>
