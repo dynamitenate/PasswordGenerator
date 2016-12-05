@@ -112,17 +112,10 @@ function setPassword(difficulty) {
 
 function savePwd() {
 	var pw = document.getElementById('password').value;
-	/*db.once('open', function(){
-		model.find({user:sessionStorage.getItem("username")},callback);
-		if(callback==null){
-			var newuser = new model({user:sessionStorage.getItem("username"), passwords[0]:pw});
-			newuser.save(function(err, newuser){
-				if(err) return console.error(err);
-			});
-		}else{
-			
-		}
-	});*/
+	sessionStorage.setItem('pwd', pw);
+	document.location.href = '/profile';
+	document.getElementById('password').value = sessionStorage.getItem('pwd');
+	sessionStorage.removeItem('pwd');
 }
 
 var capitalLetters = false;
