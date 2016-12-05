@@ -58,7 +58,7 @@
 				<textarea class="form-control" rows="4" id="dates" style="font-size:22px;"></textarea>
 				<h1><small>Step 3: (Optional, recommended for creating more complex passwords) Write about something, anything you want to write about. It can be a paragraph about yourself, or something else...</small></h1>
 				<textarea class="form-control" rows="4" id="paragraph" style="font-size:22px;"></textarea>
-				<h2>Custom generation options</h2>
+				<h2>Custom Options</h2>
 				<h3><small>Password Difficulty</small></h3>
 				<div class="radio">
 					<label><input type="radio" name="optradio" onclick="setPassword('easy')">Easy</label>
@@ -71,10 +71,10 @@
 				</div>
 				<h3><small>Extra Parameters</small></h3>
 				<div class="checkbox">
-					<label><input type="checkbox" id="capitalCB" value="">Capital Letters</label>
+					<label><input type="checkbox" id="capitalCB" value="" onclick="modifyPassword('c')">Capital Letters</label>
 				</div>
 				<div class="checkbox">
-					<label><input type="checkbox" id="specialCB" value="">Special Characters</label>
+					<label><input type="checkbox" id="specialCB" value="" onclick="modifyPassword('s')">Special Characters</label>
 				</div>
 				<p>
 				<hr>
