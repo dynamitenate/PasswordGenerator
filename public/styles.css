@@ -66,3 +66,7 @@ a:hover, a:active {
 input {
 	font-size: 22px;
 }
+
+textarea {
+	font-size: 22px;
+}
