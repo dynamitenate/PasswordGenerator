@@ -11,6 +11,7 @@ function signupButton() {
 	if (pass1.localeCompare(pass2) != 0) {
 		toastr.error('Your passwords do not match');
 		window.alert('Your passwords do not match');
+		document.getElementById('signupB').disabled = false;
 		return;
 	}
 	var data = JSON.stringify({"username": email, "password": pass1});
