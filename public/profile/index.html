@@ -19,6 +19,12 @@
         });
     });
 </script>
+<script>
+	var login = sessionStorage.getItem("username");
+	if (login == null) {
+		document.location.href = "../index.html";
+	}
+</script>
 <script src="../scripts/scripts.js"></script>
 </head>
 <body>
@@ -28,7 +34,9 @@
 <div id="body" style="margin-bottom:45px;">
 	<div class="container">
 		<h1 style = "text-align:center">Saved Passwords</h1>
-		
+		<table border = "1">
+			
+		<table>
 	</div>
 </div>
 </body>
