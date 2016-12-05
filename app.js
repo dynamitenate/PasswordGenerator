@@ -120,7 +120,7 @@ app.post('/signUp', function(req, res) {
 	}, 1000);
 });
 
-app.post('/generate', function(req, res) {
+/*app.post('/generate', function(req, res) {
 	console.log(req.body.content);
 	var content = req.body.content;
 	
@@ -136,9 +136,9 @@ app.post('/generate', function(req, res) {
 		}
 	}
 	res.send(toReturn);
-});
+});*/
 
-app.post('/genPas', function(req, res) {
+app.post('/general', function(req, res) {
 	console.log(req.body.main);
 	console.log(req.body.dates);
 	console.log(req.body.extra);
