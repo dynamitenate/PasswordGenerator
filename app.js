@@ -17,9 +17,9 @@ var bodyParser = require('body-parser');
 
 var firebase = require('firebase');
 
-/*var mongoUrl = "mongodb://justin:password@aws-us-east-1-portal.11.dblayer.com:15378/pwd?ssl=true";
-
 var mongoose = require('mongoose');
+
+var mongoUrl = "mongodb://justin:password@aws-us-east-1-portal.11.dblayer.com:15378/pwd?ssl=true";
 
 mongoose.connect(mongoUrl);
 
@@ -31,7 +31,7 @@ db.once('open',function(){
 		username: String,
 		passwords: [String]
 	})
-});*/
+});
 
 // Try to initialize the hashset and put the stopwords inside it.
 var HashSet = require('native-hashset');

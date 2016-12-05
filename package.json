@@ -10,6 +10,7 @@
     "cfenv": "^1.0.3",
     "express": "^4.13.4",
     "firebase": "^3.6.2",
+    "mongoose": "^4.7.1",
     "native-hashset": "^0.2.0"
   },
   "repository": {},
