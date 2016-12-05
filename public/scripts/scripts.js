@@ -86,7 +86,7 @@ function generateWord() {
 			console.log("Got a response!");
 			var response = this.responseText.split(" : ");
 			var sCR = Math.floor(Math.random() * 10);
-			if (capitalLetters) response[selection].capitalize();
+			if (capitalLetters) response[selection] = response[selection].charAt(0).toUpperCase + response[selection].substring(1);
 			if (specialCharacters) response[selection] = response[selection] + sC[sCR];
 			document.getElementById('password').value = response[selection];
 		}
@@ -109,6 +109,7 @@ function setPassword(difficulty) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function savePwd() {
 	var pw = document.getElementById('password').value;
 	db.once('open', function(){
@@ -127,6 +128,8 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
+=======
+>>>>>>> origin/master
 var capitalLetters = false;
 var specialCharacters = false;
 
