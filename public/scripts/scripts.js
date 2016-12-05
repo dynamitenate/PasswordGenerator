@@ -60,6 +60,7 @@ function loginButton() {
 			} else if (response.includes("Success!")) {
 				toastr.success(this.responseText);
 				localStorage.setItem('username', this.responseText);
+				document.location.href = "generate/index.html";
 			} else {
 				toastr.warning("Woah, slow down there cowboy.");
 			}
