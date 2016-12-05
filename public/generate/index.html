@@ -33,9 +33,7 @@
 	<div class="container">
 		<div id="profile" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);text-align:center; font-size:30px; background-color:white; border-radius:10px; width:250px; padding:15px;float:left;"></div>
 		<script>
-			var username = sessionStorage.getItem("username");
-			var name = username.substring(0, username.indexOf('@'));
-			name = name.substring(name.indexOf(' ') + 1);
+			var name = sessionStorage.getItem("username");
 			var hello = "Hello, <a href=\"../profile/index.html\">";
 			name = hello.concat(name);
 			name = name.concat("</a>");
