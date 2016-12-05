@@ -163,3 +163,8 @@ function modifyPassword(cap) {
 			specialCharacters = true;
 	}
 }
+
+function logout() {
+	sessionStorage.removeItem("username");
+	document.location.href = "../index.html";
+}
