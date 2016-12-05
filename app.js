@@ -17,14 +17,10 @@ var bodyParser = require('body-parser');
 
 var firebase = require('firebase');
 
-var mongoUrl = "mongodb://justin:password@aws-us-east-1-portal.11.dblayer.com:15378,aws-us-east-1-portal.10.dblayer.com:15378/admin?ssl=true";
-
+var mongoUrl = "mongodb://justin:password@aws-us-east-1-portal.11.dblayer.com:15378/pwd?ssl=true";
 var mongoose = require('mongoose');
-
 mongoose.connect(mongoUrl);
-
 var db = mongoose.connection;
-
 db.on('error', console.error.bind(console, 'connection error'));
 var schema = mongoose.Schema({
 	user: String,

@@ -58,7 +58,7 @@
 				<textarea class="form-control" rows="4" id="dates" style="font-size:22px;"></textarea>
 				<h1><small>Step 3: (Optional, recommended for creating more complex passwords) Write about something, anything you want to write about. It can be a paragraph about yourself, or something else...</small></h1>
 				<textarea class="form-control" rows="4" id="paragraph" style="font-size:22px;"></textarea>
-				<h2>Custom generation options</h2>
+				<h2>Custom Options</h2>
 				<h3><small>Password Difficulty</small></h3>
 				<div class="radio">
 					<label><input type="radio" name="optradio" onclick="setPassword('easy')">Easy</label>
@@ -71,14 +71,23 @@
 				</div>
 				<h3><small>Extra Parameters</small></h3>
 				<div class="checkbox">
-					<label><input type="checkbox" id="capitalCB" value="">Capital Letters</label>
+					<label><input type="checkbox" id="capitalCB" value="" onclick="modifyPassword('c')">Capital Letters</label>
 				</div>
 				<div class="checkbox">
-					<label><input type="checkbox" id="specialCB" value="">Special Characters</label>
+					<label><input type="checkbox" id="specialCB" value="" onclick="modifyPassword('s')">Special Characters</label>
 				</div>
+<<<<<<< HEAD
 				<button type="button" id="generate" style="padding:10px;"class="btn btn-warning" onClick="generateWord()">Generate</button>
 				<button type="button" id="save" style="margin-left:20px;padding:10px;" class="btn btn-info" onClick="savePwd()">Save</button>
 				<input type="text" id="password" style="margin-left:30px;margin-right:30px;font-size:35px;width:500px;" value="" class="field left" readonly>
+=======
+				<p>
+				<hr>
+				<p>
+				<button type="button" id="generate" style="padding:10px;font-size:25px;"class="btn btn-warning" onClick="generateWord()">Generate</button>
+				<button type="button" id="save" style="margin-left:20px;padding:10px;font-size:25px;" class="btn btn-info">Save</button>
+				<input type="text" id="password" style="margin-top:10px;margin-left:30px; margin-right:30px; font-size:35px; width:500px; border-radius: 10px;" value="" class="field left" readonly>
+>>>>>>> origin/master
 			</form>
 		</div>
 	</div>
