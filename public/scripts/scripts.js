@@ -115,8 +115,6 @@ function savePwd() {
 	var pw = document.getElementById('password').value;
 	sessionStorage.setItem('pwd', pw);
 	document.location.href = '/profile';
-	document.getElementById('password').value = sessionStorage.getItem('pwd');
-	sessionStorage.removeItem('pwd');
 }
 
 var capitalLetters = false;
