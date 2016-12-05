@@ -50,12 +50,15 @@ html,body {
 
 a:link {
 	color: gray;
+	text-decoration: none;
 }
 
 a:visited {
 	color: gray;
+	text-decoration: none;
 }
 
 a:hover {
 	color: lightgray;
+	text-decoration: none;
 }
