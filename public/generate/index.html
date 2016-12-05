@@ -33,15 +33,15 @@
 <body>
 <div id="bar">
 	<span class="typed" style="font-family:'Courier New', Courier, monospace;font-size:60px;font-weight:bold;">
-	<button type="button" id="profile" class="btn btn-default"></button>
-	<script>
-		var username = sessionStorage.getItem("username");
-		var name = username.substring(0, username.indexOf('@'));
-		document.getElementById('profile').innerHTML = name;
-	</script>
 </div>
 <div id="body" style="margin-bottom:45px;">
 	<div class="container">
+		<button type="button" id="profile" class="btn btn-default"></button>
+		<script>
+			var username = sessionStorage.getItem("username");
+			var name = username.substring(0, username.indexOf('@'));
+			document.getElementById('profile').innerHTML = name;
+		</script>
 		<div class="form-group" style="background-color:#d3d3d3;margin-top:20px;padding:5px 15px 15px 15px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);border-radius:10px;">
 			<form>
 				<h1>Tell us a little bit about yourself...<br><small>Step 1: Enter some keywords separated by commas</small></h1>
