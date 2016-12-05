@@ -86,7 +86,9 @@ function generateWord() {
 			console.log("Got a response!");
 			var response = this.responseText.split(" : ");
 			var sCR = Math.floor(Math.random() * 10);
-			if (capitalLetters) response[selection] = response[selection].charAt(0).toUpperCase + response[selection].substring(1);
+			var fCL = response[selection];
+			var fCLF = fCL.charAt(0).toUpperCase() + fCL.substring(1);
+			if (capitalLetters) response[selection] = fCLF;
 			if (specialCharacters) response[selection] = response[selection] + sC[sCR];
 			document.getElementById('password').value = response[selection];
 		}
