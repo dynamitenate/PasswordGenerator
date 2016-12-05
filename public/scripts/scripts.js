@@ -1,3 +1,6 @@
+/*eslint-env node, browser*/
+/*globals toastr data*/
+
 function signupButton() {
 	var email = document.getElementById('emailSU').value;
 	var pass1 = document.getElementById('pwdSU').value;
