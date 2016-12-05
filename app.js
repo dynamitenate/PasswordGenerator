@@ -126,6 +126,59 @@ app.post('/generate', function(req, res) {
 	
 	var words = content.split(" ");
 	
+	console.log(words);
+	
+	var i = 0;
+	var toReturn = [];
+	for (i = 0; i < words.length; i++) {
+		if (!set.contains(words[i])) {
+			toReturn.push(words[i]);
+		}
+	}
+	res.send(toReturn);
+});
+
+app.post('/genPas', function(req, res) {
+	console.log(req.body.main);
+	console.log(req.body.dates);
+	console.log(req.body.extra);
+	
+	var main = req.body.main;
+	var dates = req.body.dates;
+	var extra = req.body.extra;
+	
+	var mW = main.split(",");
+	var dW = dates.split(",");
+	var eW1 = extra.split(" ");
+	var eW = [];
+	
+	var i = 0;
+	
+	for (i = 0; i < eW1.length; i++) {
+		if (eW1[i].length >= 6 && !set.contains(eW1[i]))
+			eW.push(eW1[i]);
+	}
+	
+	// Choose 1-2 words from the mW array
+	var randomNumber = Math.floor(Math.random() * mW.length);
+	var randomNumber2 = Math.floor(Math.random() * mW.length);
+	
+	// Choose one from the dates array
+	var randomDate = Math.floor(Math.random() * dW.length);
+	
+	// (Optional) Choose one from the extra array
+	var randomRandom = Math.floor(Math.random() * eW.length);
+	
+	var gen = mW[randomNumber] + mW[randomNumber2] + dW[randomDate];
+	
+	var gen2 = null;
+	if (eW.length > 0)
+		gen2 = mW[randomNumber] + mW[randomNumber2] + dW[randomDate] + eW[randomRandom];
+	
+	if (gen2 != null)
+		res.send(gen + " : " + gen2);
+	else
+		res.send(gen);
 });
 
 // start server on the specified port and binding host
