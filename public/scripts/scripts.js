@@ -71,7 +71,8 @@ function loginButton() {
 	xhr.send(data);
 }
 
-function generate() {
+function generateWord() {
+	console.log("It enters here!");
 	var keywords = document.getElementById('keywords').value;
 	var dates = document.getElementById('dates').value;
 	var paragraph = document.getElementById('paragraph').value;
