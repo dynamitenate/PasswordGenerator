@@ -85,6 +85,9 @@ function generateWord() {
 		if (this.readyState === 4) {
 			console.log("Got a response!");
 			var response = this.responseText.split(" : ");
+			var sCR = Math.floor(Math.random() * 10);
+			if (capitalLetters) response[selection].capitalize();
+			if (specialCharacters) response[selection] = response[selection] + sC[sCR];
 			document.getElementById('password').value = response[selection];
 		}
 	});
@@ -92,6 +95,8 @@ function generateWord() {
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.send(data);
 }
+
+var sC = ['#', '!', '$', '^', '&', '*', '-', '_', '~', '+'];
 
 function setPassword(difficulty) {
 	if (difficulty == 'easy') {
@@ -107,12 +112,12 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-var capitalLetters = 0;
-var specialCharacters = 0;
+var capitalLetters = false;
+var specialCharacters = false;
 
 function modifyPassword(cap) {
 	if (cap == 'c')
-		capitalLetters = 1;
+		capitalLetters = true;
 	else if (cap == 's')
-		specialCharacters = 1;
+		specialCharacters = true;
 }
