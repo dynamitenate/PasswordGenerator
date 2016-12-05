@@ -99,13 +99,12 @@ function generateWord() {
 var sC = ['#', '!', '$', '^', '&', '*', '-', '_', '~', '+'];
 
 function setPassword(difficulty) {
-	if (difficulty == 'easy') {
+	if (difficulty == 'easy')
 		selection = 0;
-	} else if (difficulty == 'medium') {
+	else if (difficulty == 'medium')
 		selection = 1;
-	} else if (difficulty == 'hard') {
+	else if (difficulty == 'hard')
 		selection = 2;
-	}
 }
 
 <<<<<<< HEAD
