@@ -103,6 +103,14 @@ app.post('/signUp', function(req, res) {
 	}, 2000);
 });
 
+app.post('/generate', function(req, res) {
+	console.log(req.body.content);
+	var content = req.body.content;
+	
+	var words = content.split(" ");
+	
+});
+
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
