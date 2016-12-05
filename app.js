@@ -25,7 +25,7 @@ mongoose.connect(mongoUrl);
 
 var db = mongoose.connection;
 
-db.on('error', console.bind(console, 'connection error'));
+db.on('error', console.error.bind(console, 'connection error'));
 db.once('open',function(){
 	var schema = mongoose.Schema({
 		username: String,
