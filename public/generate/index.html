@@ -19,6 +19,11 @@
         });
     });
 </script>
+<script>
+	var login = localStorage.getItem("username");
+	if (login === null) {
+		document.location.href = "https://espnbetting.mybluemix.net/";
+	}
 <script src="../scripts/scripts.js"></script>
 </head>
 <body>
