@@ -143,6 +143,17 @@ function addPassword(){
 	cell1.innerHTML = service;
 	cell2.innerHTML = user;
 	cell3.innerHTML = pass;
+	var currentUser = sessionStorage.getItem("username");
+	var data = JSON.stringify({"user": currentUser, "website": service, "username": user, "password": pass});
+	var xhr = new XMLHttpRequest();
+	xhr.addEventListener("readystatechange", function() {
+		if (this.readyState === 4) {
+			console.log("Got a response!");
+		}
+	});
+	xhr.open("POST", "https://espnbetting.mybluemix.net/addEntry");
+	xhr.setRequestHeader("content-type", "application/json");
+	xhr.send(data);
 }
 
 function modifyPassword(cap) {
