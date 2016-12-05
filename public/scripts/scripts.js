@@ -1,6 +1,8 @@
 /*eslint-env node, browser*/
 /*globals toastr data*/
 
+toastr.options.closeButton = true;
+
 function signupButton() {
 	document.getElementById('signupB').disabled = true;
 	var email = document.getElementById('emailSU').value;
