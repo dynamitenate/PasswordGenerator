@@ -54,7 +54,6 @@ app.post('/authenticate', function(req, res) {
 		var errorMessage = error.message;
 		console.log(errorCode + ": " + errorMessage);
 		authenticated = false;
-		//res.send("Error!");
 	});
 	
 	setTimeout(function() {
@@ -66,7 +65,7 @@ app.post('/authenticate', function(req, res) {
 			}
 		}
 		else if (authenticated == true) {
-			res.send(email);
+			res.send("Success! " + email);
 		}
 	}, 2000);
 });

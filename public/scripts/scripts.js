@@ -46,15 +46,18 @@ function loginButton() {
 	xhr.addEventListener("readystatechange", function () {
   		if (this.readyState === 4) {
     		console.log(this.responseText);
+			var response = this.responseText;
 			if (this.responseText == "User not found!") {
 				toastr.error('Couldn\'t Sign in. Incorrect Email');
 				window.alert('Couldn\'t Sign in. Incorrect Email');
 			} else if (this.responseText == "Wrong Password!") {
 				toastr.error('Couldn\'t Sign in. Incorrect Password');
 				window.alert('Couldn\'t Sign in. Incorrect Password');
-			} else {
+			} else if (response.includes("Success!")) {
 				toastr.success(this.responseText);
 				localStorage.setItem('username', this.responseText);
+			} else {
+				toastr.error("Screw you, biatch.");
 			}
 			document.getElementById('loginB').disabled = false;
   		}
