@@ -120,25 +120,7 @@ app.post('/signUp', function(req, res) {
 	}, 1000);
 });
 
-/*app.post('/generate', function(req, res) {
-	console.log(req.body.content);
-	var content = req.body.content;
-	
-	var words = content.split(" ");
-	
-	console.log(words);
-	
-	var i = 0;
-	var toReturn = [];
-	for (i = 0; i < words.length; i++) {
-		if (!set.contains(words[i])) {
-			toReturn.push(words[i]);
-		}
-	}
-	res.send(toReturn);
-});*/
-
-app.post('/general', function(req, res) {
+app.post('/generateRandom', function(req, res) {
 	console.log(req.body.main);
 	console.log(req.body.dates);
 	console.log(req.body.extra);
@@ -154,6 +136,7 @@ app.post('/general', function(req, res) {
 	
 	var i = 0;
 	
+	// Remove the stop words and the words less than 6 characters in length
 	for (i = 0; i < eW1.length; i++) {
 		if (eW1[i].length >= 6 && !set.contains(eW1[i]))
 			eW.push(eW1[i]);
