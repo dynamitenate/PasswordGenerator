@@ -72,5 +72,19 @@ function loginButton() {
 }
 
 function generate() {
+	var keywords = document.getElementById('keywords').value;
+	var dates = document.getElementById('dates').value;
+	var paragraph = document.getElementById('paragraph').value;
 	
+	var data = JSON.stringify({"main": keywords, "dates": dates, "extra": paragraph});
+	var xhr = new XMLHttpRequest();
+	xhr.addEventListener("readystatechange", function() {
+		if (this.readyState === 4) {
+			console.log("Got a response!");
+			document.getElementById('password').value = this.responseText;
+		}
+	});
+	xhr.open("POST", "https://espnbetting.mybluemix.net/generateRandom");
+	xhr.setRequestHeader("content-type", "application/json");
+	xhr.send(data);
 }
