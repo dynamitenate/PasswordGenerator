@@ -20,8 +20,8 @@
     });
 </script>
 <script>
-	var login = sessionStorage.getItem("username");
-	if (login == null) {
+	var log = sessionStorage.getItem("username");
+	if (log == null) {
 		document.location.href = "../index.html";
 	}
 </script>
@@ -62,8 +62,8 @@
 			</div>
 		</div>
 		<script>
-			console.log(login);
-			var data = JSON.stringify({"user":login});
+			console.log(log);
+			var data = JSON.stringify({"user":log});
 			var xhr = new XMLHttpRequest();
 			xhr.addEventListener("readystatechange", function() {
 				if (this.readyState === 4) {
